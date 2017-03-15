@@ -1,8 +1,9 @@
-<form class="form-horizontal">
+<form class="form-horizontal" ng-controller="registerCtrl as rc">
+    <h1>{{rc.title}}</h1>
     <div class="form-group">
         <label class="control-label col-sm-2" for="email">First Name:</label>
         <div class="col-sm-4">
-            <input type="text" class="form-control" placeholder="Enter First Name">
+            <input type="text" class="form-control" placeholder="Enter First Name" ng-model="rc.user.firstName">
         </div>
     </div>
     <div class="form-group">
@@ -23,7 +24,6 @@
             <input type="password" class="form-control" placeholder="Enter password">
         </div>
     </div>
-
     <div class="form-group">
         <label class="control-label col-sm-2" for="pwd">Phone:</label>
         <div class="col-sm-4">
@@ -40,7 +40,7 @@
     <div class="form-group">
         <label class="control-label col-sm-2" for="pwd">Country:</label>
         <div class="col-sm-4">
-            <select class="form-control"></select>
+            <select class="form-control" ng-model="rc.user.country" ng-options="country.name for country in rc.countries"></select>
         </div>
     </div>
 
@@ -56,7 +56,9 @@
     </div>
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-4">
-            <button type="submit" class="btn btn-default">Submit</button>
+            <button class="btn btn-default" ng-click="rc.register()">Submit</button>
         </div>
     </div>
+
+    {{rc.user}}
 </form>

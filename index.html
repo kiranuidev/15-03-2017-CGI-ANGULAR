@@ -2,12 +2,12 @@
 
 <head>
     <title>{{welcome}}</title>
-   <!--<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <!--<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
 
 <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
-    
-    
+
+
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js">
 
@@ -17,11 +17,20 @@
 </head>
 
 <body>
-    <div class="container">
-        <div ng-include="'app/templates/register.tpl.html'" </div>
-            <!--REGISTER MODULE-->
-            <script src="app/register/register.js"></script>
-            <script src="app/app.js"></script>
+    <div class="container" ng-controller="mainCtrl as mc">
+        <div ng-include="mc.templates.header"></div>
+        <div ng-include="mc.contentTemplate"> </div>
+
+
+    </div>
+    <!--REGISTER MODULE-->
+    <script src="app/register/register.js"></script>
+    <script src="app/register/registerCtrl.js"></script>
+
+
+
+
+    <script src="app/app.js"></script>
 </body>
 
 </html>
