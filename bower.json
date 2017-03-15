@@ -1,0 +1,21 @@
+{
+  "name": "15-03-2017-CGI-ANGULAR",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "kiranpaturi <kiran_p@k3informatics.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/kiranuidev/15-03-2017-CGI-ANGULAR",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "angularjs#^1.6.3",
+    "bootstrap": "^3.3.7"
+  }
+}
