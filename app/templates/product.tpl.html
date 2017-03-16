@@ -1,1 +1,22 @@
 <h1>Product</h1>
+<div ng-controller="productCtrl as pc">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Index</th>
+                <th>Model</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in pc.products">
+                <td>{{item.Index}}</td>
+                <td>{{item.Model}}</td>
+                <td>{{item.Description}}</td>
+                <td>{{item.Price}}</td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>

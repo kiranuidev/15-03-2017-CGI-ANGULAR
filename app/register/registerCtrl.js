@@ -6,5 +6,12 @@ angular.module("register")
         vm.register = function() {
             console.log(vm.user);
         };
-        vm.countries = registerSvc.getCountries();
+        //vm.countries = registerSvc.getCountries();
+        registerSvc.getCountriesFromApi()
+            .then(function(response) {
+                vm.countries = response;
+            })
+            .catch(function(errorResponse) {
+                console.log(errorResponse);
+            });
     }]);

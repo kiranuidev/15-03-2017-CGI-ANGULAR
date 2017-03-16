@@ -1,4 +1,4 @@
-angular.module("cgikart", ["register"]);
+angular.module("cgikart", ["register", "product"]);
 
 angular.module("cgikart")
     .config([function() {
