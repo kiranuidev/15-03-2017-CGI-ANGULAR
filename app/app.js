@@ -1,4 +1,4 @@
-angular.module("cgikart", ["register", "product"]);
+angular.module("cgikart", ["register", "product", "ui.bootstrap"]);
 
 angular.module("cgikart")
     .config([function() {
@@ -11,10 +11,11 @@ angular.module("cgikart")
     }]);
 
 angular.module("cgikart")
-    .controller("mainCtrl", [function() {
+    .controller("mainCtrl", ["$rootScope", function($rootScope) {
         var vm = this;
         vm.brandName = "CGIMall";
         vm.templates = {};
+        vm.cartItems = 0;
         vm.templates.header = "app/templates/header.tpl.html";
         vm.templates.register = "app/templates/register.tpl.html";
         /*vm.navItems = ["Home", "Products", "Register", "Login"];*/
@@ -45,4 +46,8 @@ angular.module("cgikart")
         vm.loadPage = function(data) {
             vm.contentTemplate = data.template;
         };
+        $rootScope.$on("ADD-ITEM", function(evet, args) {
+            console.log(args);
+            vm.cartItems++;
+        });
     }]);
