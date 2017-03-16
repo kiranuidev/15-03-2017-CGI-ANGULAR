@@ -1,8 +1,24 @@
-angular.module("cgikart", ["register", "product", "ui.bootstrap"]);
+angular.module("cgikart", ["register", "product", "ui.bootstrap", "pascalprecht.translate"]);
 
 angular.module("cgikart")
-    .config([function() {
+    .config(["$translateProvider", function($translateProvider) {
         console.log("Config:cgikart module");
+        $translateProvider.translations('en', {
+            Home: 'Home',
+            Cart: 'Cart',
+            Products: 'Produkte',
+            Login: 'Login',
+            Register: "Register"
+        });
+        $translateProvider.translations('de', {
+            Home: 'Zuhause',
+            Cart: 'Karte',
+            Products: 'Produkte',
+            Login: 'Anmeldung',
+            Register: "Neu registrieren"
+        });
+        $translateProvider.preferredLanguage('de');
+
     }]);
 
 angular.module("cgikart")
@@ -11,7 +27,7 @@ angular.module("cgikart")
     }]);
 
 angular.module("cgikart")
-    .controller("mainCtrl", ["$rootScope", function($rootScope) {
+    .controller("mainCtrl", ["$rootScope", "$translate", function($rootScope, $translate) {
         var vm = this;
         vm.brandName = "CGIMall";
         vm.templates = {};
@@ -50,4 +66,8 @@ angular.module("cgikart")
             console.log(args);
             vm.cartItems++;
         });
+
+        vm.changeTo = function(type) {
+            $translate.use(type);
+        };
     }]);

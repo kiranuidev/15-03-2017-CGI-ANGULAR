@@ -11,13 +11,13 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li ng-click="mc.loadPage(item)" ng-repeat="item in mc.navItems">
-                    <a href="#">{{item.display}}</a>
+                    <a href="#">{{item.display|translate}}</a>
                 </li>
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <!--<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>-->
+                <li ng-click="mc.changeTo('en')"><a href="#"><span class="glyphicon glyphicon-user"></span> English</a></li>
+                <li ng-click="mc.changeTo('de')"><a href="#"><span class="glyphicon glyphicon-log-in"></span> Deutsche</a></li>
                 <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>{{mc.cartItems}} Cart</a></li>
             </ul>
         </div>
