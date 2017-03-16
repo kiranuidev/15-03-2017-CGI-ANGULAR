@@ -1,17 +1,10 @@
 angular.module("register")
-    .controller("registerCtrl", [function () {
+    .controller("registerCtrl", ["registerSvc", function(registerSvc) {
         var vm = this;
         vm.title = "Register";
         vm.user = {};
-        vm.register = function () {
+        vm.register = function() {
             console.log(vm.user);
         };
-        vm.countries = [{
-                name: "India",
-                code: "IN"
-            },
-            {
-                name: "Canada",
-                code: "CA"
-            }];
-}]);
+        vm.countries = registerSvc.getCountries();
+    }]);
