@@ -1,5 +1,5 @@
 <h1>Product</h1>
-<div ng-controller="productCtrl as pc">
+<div >
     <input type="text" placeholder="Search" ng-model="pc.searchByModel" class="form-control">
     <ul uib-pagination total-items="pc.pagination.totalItems" ng-model="pc.pagination.currentPage" ng-change="pc.pageChanged()"></ul>
     <table class="table table-striped">
@@ -14,9 +14,9 @@
         <tbody>
             <tr ng-repeat="item in pc.paginatedProducts|filter:{Model:pc.searchByModel}|orderBy:pc.priceOrder">
                 <td>{{$index+1}}</td>
-                <td>{{item.Model|lowercase}}</td>
-                <td>{{item.Description|uppercase}}</td>
-                <td>{{item.Price|currency}}</td>
+                <td>{{::item.Model|lowercase}}</td>
+                <td>{{::item.Description|uppercase}}</td>
+                <td>{{::item.Price|currency}}</td>
                 <td><button class="btn btn-primary" ng-click="pc.addToCart(item)">Add To Cart</button></td>
             </tr>
 

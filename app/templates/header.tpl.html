@@ -11,7 +11,7 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li ng-click="mc.loadPage(item)" ng-repeat="item in mc.navItems">
-                    <a href="#">{{item.display|translate}}</a>
+                    <a ui-sref="{{::item.display|lowercase}}">{{::item.display|translate}}</a>
                 </li>
 
             </ul>

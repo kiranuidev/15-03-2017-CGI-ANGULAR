@@ -1,7 +1,8 @@
 angular.module("product")
-    .controller("productCtrl", ["productSvc", "$rootScope",
-        function(productSvc, $rootScope) {
+    .controller("productCtrl", ["productSvc", "$rootScope","$state",
+        function(productSvc, $rootScope,$state) {
             var vm = this;
+            console.log($state);
             vm.priceOrder = "Price";
             vm.pagination = {
                 totalItems: 0,

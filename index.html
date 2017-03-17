@@ -1,7 +1,7 @@
 <html ng-app="cgikart">
 
 <head>
-    <title>{{welcome}}</title>
+    <title></title>
     <!--<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
 
 <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">-->
@@ -15,20 +15,25 @@
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/angular-translate/angular-translate.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 </head>
 
 <body>
     <div class="container" ng-controller="mainCtrl as mc">
-        <div cgi-header cgi-click></div>
+        <!--<div cgi-header cgi-click></div>
         <div cgi-nav-bar></div>
         <div cgi-custom-nav logo={{mc.brandName}} menu="mc.navItems"></div>
-        <!--<cgi-nav-bar></cgi-nav-bar>-->
+      
         <div cgi-change-color class="test"></div>
-        <!--<div ng-include="mc.templates.header"></div>-->
+      
         <div ng-include="mc.contentTemplate"> </div>
         <div cgi-transclude>
             <h1>I am also there buddy</h1>
-        </div>
+        </div>-->
+      <!--  <a ui-sref="login">Login</a>
+         <a ui-sref="register">Register</a>-->
+        <div ng-include="mc.templates.header"> </div>
+        <div ui-view></div>
 
     </div>
     <!--REGISTER MODULE-->
