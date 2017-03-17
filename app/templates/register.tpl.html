@@ -22,6 +22,13 @@
         <p ng-if="registerForm.email.$error.pattern">Invalid pattern for email</p>
     </div>
     <div class="form-group">
+        <label class="control-label col-sm-2" for="email">DOB:</label>
+        <div class="col-sm-4">
+            <input type="text" cgi-date-picker class="form-control" ng-model="rc.user.DOB" placeholder="Enter Date of Birth">
+        </div>
+        <p ng-if="registerForm.email.$error.pattern">Invalid pattern for email</p>
+    </div>
+    <div class="form-group">
         <label class="control-label col-sm-2" for="pwd">Password:</label>
         <div class="col-sm-4">
             <input type="password" class="form-control" placeholder="Enter password">
@@ -30,7 +37,7 @@
     <div class="form-group">
         <label class="control-label col-sm-2" for="pwd">Phone:</label>
         <div class="col-sm-4">
-            <input type="text" class="form-control" placeholder="Enter Phone">
+            <input type="text" class="form-control" maxlength="10" placeholder="Enter Phone" cgi-numbers-only>
         </div>
     </div>
     <div class="form-group">
@@ -59,7 +66,7 @@
     </div>
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-4">
-            <button class="btn btn-default" ng-click="rc.register()">Submit</button>
+            <button class="btn btn-default" cgi-click="rc.register()">Submit</button>
         </div>
     </div>
 

@@ -1,4 +1,4 @@
-angular.module("cgikart", ["register", "product", "ui.bootstrap", "pascalprecht.translate"]);
+angular.module("cgikart", ["register", "product", "ui.bootstrap", "pascalprecht.translate", "common"]);
 
 angular.module("cgikart")
     .config(["$translateProvider", function($translateProvider) {
